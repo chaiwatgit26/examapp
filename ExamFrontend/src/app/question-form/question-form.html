@@ -1,0 +1,90 @@
+<div class="form-container">
+
+  <div class="form-card">
+
+    <h1>IT 08-2</h1>
+
+    <form (ngSubmit)="save()">
+
+      <div class="form-group">
+        <label for="questionText">
+          คำถาม
+        </label>
+
+        <input
+          id="questionText"
+          type="text"
+          name="questionText"
+          [(ngModel)]="questionText">
+      </div>
+
+      <div class="form-group">
+        <label for="choice1">
+          คำตอบ 1
+        </label>
+
+        <input
+          id="choice1"
+          type="text"
+          name="choice1"
+          [(ngModel)]="choices[0]">
+      </div>
+
+      <div class="form-group">
+        <label for="choice2">
+          คำตอบ 2
+        </label>
+
+        <input
+          id="choice2"
+          type="text"
+          name="choice2"
+          [(ngModel)]="choices[1]">
+      </div>
+
+      <div class="form-group">
+        <label for="choice3">
+          คำตอบ 3
+        </label>
+
+        <input
+          id="choice3"
+          type="text"
+          name="choice3"
+          [(ngModel)]="choices[2]">
+      </div>
+
+      <div class="form-group">
+        <label for="choice4">
+          คำตอบ 4
+        </label>
+
+        <input
+          id="choice4"
+          type="text"
+          name="choice4"
+          [(ngModel)]="choices[3]">
+      </div>
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="btn-cancel"
+          routerLink="/">
+          ยกเลิก
+        </button>
+
+        <button
+          type="submit"
+          class="btn-save">
+          บันทึก
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
