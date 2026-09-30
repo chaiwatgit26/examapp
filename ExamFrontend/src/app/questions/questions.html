@@ -1,0 +1,61 @@
+
+<div class="questions-container">
+  <div class="header">
+    <h1>IT 08-1</h1>
+
+    <a routerLink="/questions/new">
+        <button type="button">
+            เพิ่มข้อสอบ
+        </button>
+    </a>
+  </div>
+
+  @if (questions.length === 0) {
+
+    <p>ไม่พบข้อสอบ</p>
+
+  } @else {
+
+    @for (question of questions; track question.id) {
+
+      <div class="question-item">
+
+        <div class="question-header">
+
+          <strong>
+            {{ question.questionNo }}. {{ question.questionText }}
+          </strong>
+
+          <button
+            type="button"
+            (click)="deleteQuestion(question.id)">
+            ลบ
+          </button>
+
+        </div>
+
+        <div class="choices">
+
+          @for (choice of question.choices; track $index) {
+
+            <label class="choice">
+              <input
+                type="radio"
+                [name]="'question-' + question.id"
+                [value]="choice">
+
+              {{ choice }}
+            </label>
+
+          }
+
+        </div>
+
+      </div>
+
+    }
+
+  }
+
+</div>
+
